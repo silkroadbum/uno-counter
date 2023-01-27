@@ -20,7 +20,7 @@ function Player({players, setPlayers, player, id}) {
           <span className='player-list__scores'>{player.scores}</span>
           {showTextFiled 
             ? <span>
-                <input ref={inputRef} className='player-list__text-field' name='value' type='text'/>
+                <input ref={inputRef} className='player-list__text-field' name='value' type='number' placeholder='Число'/>
                 <button onClick={addScore} className='player-list__add_value' type='button'>Добавить</button>
               </span>
             : <button onClick={showField} className='player-list__button'>Добавить очки</button>
