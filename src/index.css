@@ -159,6 +159,15 @@ body {
     line-height: 20px;
 }
 
+.button:hover {
+    background-color: #d9ab4f;
+}
+
+.button:active {
+    background-color: #d9ab4f;
+    opacity: 0.7;
+}
+
 .button--add-player {
     border-radius: 0px 10px 10px 0px;
     width: 260px;
