@@ -15,15 +15,19 @@ function Player({players, setPlayers, player, id}) {
 
   return (
     <li className='player-list__item'>
-        {player.name}
+      <div className='player-list__info'>
+        <span className='player-list__name'>{player.name}</span>
+        <span className='player-list__scores'>{player.scores}</span>
+      </div>
         <span className='player-list__block'>
-          <span className='player-list__scores'>{player.scores}</span>
           {showTextFiled 
-            ? <span>
+            ? <span className='player-list__wrapper'>
                 <input ref={inputRef} className='player-list__text-field' name='value' type='number' placeholder='Число'/>
-                <button onClick={addScore} className='player-list__add_value' type='button'>Добавить</button>
+                <button onClick={addScore} className='button player-list__add_value' type='button'>
+                  <img src='img/check.svg' className='player-list__icon' alt='Icon check' width={40}/>
+                </button>
               </span>
-            : <button onClick={showField} className='player-list__button'>Добавить очки</button>
+            : <button onClick={showField} className='button player-list__button'>Добавить очки</button>
           }
         </span>
     </li>

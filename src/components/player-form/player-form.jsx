@@ -16,8 +16,8 @@ function PlayerForm({players, setPlayers}) {
 
   return (
     <form className='player-form'>
-        <input onChange={onChangeInput} value={formData.name} name='name' type='text' placeholder='Введите имя игрока' required/>
-        <button onClick={onClickButton} type='button'>Добавить</button>
+        <input className='player-form__input' onChange={onChangeInput} value={formData.name} name='name' type='text' placeholder='Введите имя игрока' required/>
+        <button className='button button--add-player' onClick={onClickButton} type='button'>Добавить игрока</button>
     </form>
   );
 }
