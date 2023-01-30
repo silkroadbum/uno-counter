@@ -10,10 +10,15 @@ function PlayerList() {
       <div className="header">
         <PlayerForm players={players} setPlayers={setPlayers}/>
       </div>
-      <div className="player-header">
-        <div className="player-title">Игрок:</div>
-        <div className="player-title">Очки:</div>
-      </div>
+      {players.length > 0 
+        ? 
+        <div className="player-header">
+          <div className="player-title">Игрок:</div>
+          <div className="player-title">Очки:</div>
+        </div>
+        : ''
+      }
+      
       <ul className="player-list">
         {players && players.map((player, i) => (
           <Player key={i + player.name} players={players} setPlayers={setPlayers} player={player} id={i}/>)

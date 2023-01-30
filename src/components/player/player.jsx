@@ -9,14 +9,23 @@ function Player({players, setPlayers, player, id}) {
   };
 
   const addScore = () => {
-    setPlayers([...players.slice(0, id), {name: player.name, scores: player.scores + Number(inputRef.current.value)} ,...players.slice(id + 1)])
+    setPlayers([...players.slice(0, id), {name: player.name, scores: player.scores + Number(inputRef.current.value)} ,...players.slice(id + 1)]);
     setShowTextFiled(!setShowTextFiled);
+  }
+
+  const deletePlayer = () => {
+    setPlayers([...players.slice(0, id), ...players.slice(id + 1)])
   }
 
   return (
     <li className='player-list__item'>
       <div className='player-list__info'>
-        <span className='player-list__name'>{player.name}</span>
+        <span className='player-list__name'>
+          {player.name}
+          <button className='player-list__delete-player' onClick={deletePlayer} type='button'>
+            <img className='player-list__icon' src='img/delete.svg' alt='Delete icon'/>
+          </button>
+        </span>
         <span className='player-list__scores'>{player.scores}</span>
       </div>
         <span className='player-list__block'>
