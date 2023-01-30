@@ -1,7 +1,9 @@
-import React from 'react'
+import {useState, useContext} from 'react'
+import { AppContext } from '../../App';
 
-function PlayerForm({players, setPlayers}) {
-    const [formData, setFormData] = React.useState({name: '', scores: 0});
+function PlayerForm() {
+    const [formData, setFormData] = useState({name: '', scores: 0});
+    const {players, setPlayers} = useContext(AppContext);
 
     const onClickButton = () => {
         if (formData.name !== '') {

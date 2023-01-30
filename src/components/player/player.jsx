@@ -1,8 +1,10 @@
-import React from 'react'
+import {useRef, useState, useContext} from 'react'
+import { AppContext } from '../../App';
 
-function Player({players, setPlayers, player, id}) {
-  const [showTextFiled, setShowTextFiled] = React.useState(false);
-  const inputRef = React.useRef(null);
+function Player({player, id}) {
+  const [showTextFiled, setShowTextFiled] = useState(false);
+  const inputRef = useRef(null);
+  const {players, setPlayers} = useContext(AppContext);
 
   const showField = () => {
     setShowTextFiled(!showTextFiled);

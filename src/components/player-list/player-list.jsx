@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext } from "react";
+
 import PlayerForm from "../player-form/player-form";
 import Player from "../player/player";
 
+import { AppContext } from "../../App";
+
 function PlayerList() {
-  const [players, setPlayers] = useState([]);
+  const {players, setPlayers} = useContext(AppContext);
 
   const resetCount = () => {
     setPlayers((prev) => prev.map((obj) => ({...obj, scores: 0})))
@@ -12,7 +15,7 @@ function PlayerList() {
   return (
     <div className="container">
       <div className="header">
-        <PlayerForm players={players} setPlayers={setPlayers}/>
+        <PlayerForm />
       </div>
       {players.length > 0 
         ? 
@@ -26,7 +29,7 @@ function PlayerList() {
       
       <ul className="player-list">
         {players && players.map((player, i) => (
-          <Player key={i + player.name} players={players} setPlayers={setPlayers} player={player} id={i}/>)
+          <Player key={i + player.name} player={player} id={i}/>)
         )}
       </ul>
     </div>
