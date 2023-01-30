@@ -37,6 +37,7 @@ body {
 .player-header {
     padding: 25px 25px 0;
     display: flex;
+    margin-bottom: 10px;
 }
 
 .player-title {
@@ -46,6 +47,13 @@ body {
     color: #000000;
     min-width: 343px;
     padding-left: 5px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.player-title__scores {
+    min-width: 100px;
+    flex-grow: 1;
 }
 
 .player-list {
@@ -167,6 +175,10 @@ body {
     font-size: 20px;
     line-height: 20px;
     cursor: pointer;
+}
+
+.button--reset {
+    border-radius: 10px;
 }
 
 .button:hover {

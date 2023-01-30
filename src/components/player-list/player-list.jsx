@@ -3,7 +3,11 @@ import PlayerForm from "../player-form/player-form";
 import Player from "../player/player";
 
 function PlayerList() {
-    const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState([]);
+
+  const resetCount = () => {
+    setPlayers((prev) => prev.map((obj) => ({...obj, scores: 0})))
+  };
 
   return (
     <div className="container">
@@ -14,7 +18,8 @@ function PlayerList() {
         ? 
         <div className="player-header">
           <div className="player-title">Игрок:</div>
-          <div className="player-title">Очки:</div>
+          <div className="player-title player-title__scores">Очки:</div>
+          <button className="button button--reset" onClick={resetCount} type="button">Сбросить очки</button>
         </div>
         : ''
       }
